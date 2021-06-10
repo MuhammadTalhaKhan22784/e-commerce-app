@@ -1,0 +1,31 @@
+.faq_section {
+  margin-top: 89px;
+  padding-left: 8rem;
+  width: 98%;
+  height: max-content;
+}
+
+.faq_header {
+  width: 100%;
+  padding: 10px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq_header div{
+    width: 30%;
+    text-align: end;
+}
+
+.faq_header h2 {
+  text-align: center;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500;
+  font-size: 2rem;
+  color: #302C2C;
+}
+
+.faq_content {
+    width: 100%;
+}
