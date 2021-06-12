@@ -53,6 +53,7 @@ const DialogActions = withStyles((theme) => ({
 
 export default function CustomizedDialogs() {
   const [open, setOpen] = React.useState(false);
+  const [bool, setBool] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -238,7 +239,7 @@ export default function CustomizedDialogs() {
                   justifyContent="space-between"
                 >
                   <span>Contracts</span>
-                  <SwitchToggle />
+                  <SwitchToggle handleShow={(e)=>setBool(e)} toggle={bool} off='false' on='true' />
                 </Box>
                 <Box mt="0.5rem" mb="0.5rem">
                   <hr />

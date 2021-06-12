@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Form.css";
 // assets
 import userIcon from "../../Assets/user-icon.png";
@@ -12,48 +13,49 @@ const Login = () => {
     <React.Fragment>
       <div className="login_section">
         <div className="s_stepper">
-          <img src={CCLogo} />
+          <Link to="/">
+            <img src={CCLogo} />
+          </Link>
           <div>
-          <div className="s_stepper_content">
-            <div className="signup_content">
-              <div>
-                <h2>Login</h2>
-              </div>
-              <form action="#" className="s_form s2_form">
+            <div className="s_stepper_content">
+              <div className="signup_content">
                 <div>
-                  <img src={userIcon} />
-                  <input type="text" placeholder="Email Address" />
+                  <h2>Login</h2>
                 </div>
-                <div>
+                <form action="#" className="s_form s2_form">
                   <div>
-                    <img src={lockIcon} />
-                    <input type="text" placeholder="Password" />
+                    <img src={userIcon} />
+                    <input type="text" placeholder="Email Address" />
                   </div>
-                  <img src={eyeIcon} />
-                </div>
-                <div className="fp_text">
-                  <span>
-                    Forgot Password? <strong>Reset</strong>
-                  </span>
-                </div>
-              </form>
+                  <div>
+                    <div>
+                      <img src={lockIcon} />
+                      <input type="password" placeholder="Password" />
+                    </div>
+                    <img src={eyeIcon} />
+                  </div>
+                  <div className="fp_text">
+                    <span>
+                      Forgot Password? <strong>Reset</strong>
+                    </span>
+                  </div>
+                </form>
+              </div>
+              <div>
+                <Button variant="contained" className="stepper_btn">
+                  LOGIN
+                </Button>
+              </div>
             </div>
-            <div>
-              <Button variant="contained" className="stepper_btn">
-                LOGIN
-              </Button>
+            <div className="s_stepper_bottom">
+              <span>
+                © 2020 Collective Contract, Inc. All rights reserved. |{" "}
+                <strong>Privacy</strong>
+              </span>
             </div>
-          </div>
-          <div className="s_stepper_bottom">
-            <span>
-              © 2020 Collective Contract, Inc. All rights reserved. |{" "}
-              <strong>Privacy</strong>
-            </span>
-          </div>
           </div>
         </div>
         <div className="s_stepperimg s_img2"></div>
-
       </div>
     </React.Fragment>
   );

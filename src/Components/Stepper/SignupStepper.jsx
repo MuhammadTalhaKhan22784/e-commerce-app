@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
 import CCLogo from "../../Assets/CC_Logo_final 2.svg";
 import "../Style/SignupStepper.css";
 import Signup from "../../Pages/Form/Signup";
 import SignupTwo from "../../Pages/Form/SignupTwo";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,43 +43,35 @@ export default function SignupStepper() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
+  const history = useHistory();
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleReset = () => {
-    setActiveStep(0);
+    if (activeStep == 1) {
+      history.push("/login");
+    }
   };
 
   return (
     <div className="signup_section">
       <div className="s_stepper">
-        <img src={CCLogo} />
-
+        <Link to="/">
+          <img src={CCLogo} />
+        </Link>
         <div>
-          {activeStep === steps.length ? (
-            <div>
-              <Typography className={classes.instructions}>
-                All steps completed
-              </Typography>
-              <Button onClick={handleReset}>Reset</Button>
-            </div>
-          ) : (
-            <div className="s_stepper_content">
-              <div>{getStepContent(activeStep)}</div>
+          <div className="s_stepper_content">
+            <div>{getStepContent(activeStep)}</div>
 
-              <div>
-                <Button
-                  variant="contained"
-                  onClick={handleNext}
-                  className="stepper_btn"
-                >
-                  {activeStep === steps.length - 1 ? "Finish" : "START"}
-                </Button>
-              </div>
+            <div>
+              <Button
+                variant="contained"
+                onClick={handleNext}
+                className="stepper_btn"
+              >
+                {activeStep === steps.length - 1 ? "Finish" : "START"}
+              </Button>
             </div>
-          )}
+          </div>
           <Stepper
             className="stepper_step"
             activeStep={activeStep}

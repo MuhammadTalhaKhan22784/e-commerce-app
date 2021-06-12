@@ -50,7 +50,7 @@ const ResultHead = () => {
           <div className="compare_switch_div">
             <p>Compare</p>
             <div>
-              <SwitchToggle handleShow={handleCompare} toggle={comp} />
+              <SwitchToggle handleShow={handleCompare} toggle={comp} off='OFF' on='ON' />
             </div>
           </div>
         </div>

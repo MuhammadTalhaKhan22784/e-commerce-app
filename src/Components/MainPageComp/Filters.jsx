@@ -18,12 +18,12 @@ const Filters = ({partfunc,handleShowPrice,price,handleImg,cardImgT}) => {
 
   const handleAdd = () => {
     if (count < 40) {
-      setCount(count + 5);
+      setCount(++count );
     }
   };
   const handleMinus = () => {
     if (count > 5) {
-      setCount(count - 5);
+      setCount(--count);
     }
   };
   return (
@@ -63,14 +63,14 @@ const Filters = ({partfunc,handleShowPrice,price,handleImg,cardImgT}) => {
                    <img src={dollar} alt="" />
                    <p>Price</p>
                 </div>
-                <SwitchToggle handleShow={handleShowPrice} toggle={price} />
+                <SwitchToggle handleShow={handleShowPrice} toggle={price} on='ON' off='OFF' />
             </div>
             <div className="price_switch">
                 <div className="img_price">
                    <img src={imgs} alt="" />
                    <p>Image</p>
                 </div>
-                <SwitchToggle handleShow={handleImg} toggle={cardImgT} />
+                <SwitchToggle handleShow={handleImg} toggle={cardImgT} on='ON' off='OFF' />
             </div>
         </div>
         <div className="filter_tags_div">

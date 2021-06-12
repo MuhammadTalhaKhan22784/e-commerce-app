@@ -19,14 +19,14 @@ const SignupTwo = () => {
           <div>
             <div>
               <img src={lockIcon} />
-              <input type="text" placeholder="Password" />
+              <input type="password" placeholder="Password" />
             </div>
             <img src={eyeIcon} />
           </div>
           <div>
             <div>
               <img src={lockIcon} />
-              <input type="text" placeholder="Re-Type Password" />
+              <input type="password" placeholder="Re-Type Password" />
             </div>
             <img src={eyeIcon} />
           </div>

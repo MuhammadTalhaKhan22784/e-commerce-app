@@ -9,20 +9,20 @@ const Signup = () => {
         </div>
         <form action="#" className="s_form">
           <div>
-            <label htmlFor="username">First Name</label>
-            <input type="text" id="username" />
+            <label htmlFor="firstname">First Name</label>
+            <input type="text" id="firstname" />
           </div>
           <div>
-            <label htmlFor="username">Last Name</label>
-            <input type="text" id="username" />
+            <label htmlFor="lastname">Last Name</label>
+            <input type="text" id="lastname" />
           </div>
           <div>
-            <label htmlFor="username">Company</label>
-            <input type="text" id="username" />
+            <label htmlFor="company">Company</label>
+            <input type="text" id="company" />
           </div>
           <div>
-            <label htmlFor="password">Phone Number</label>
-            <input type="number" id="password" />
+            <label htmlFor="phonenumber">Phone Number</label>
+            <input type="number" id="phonenumber" />
           </div>
         </form>
       </div>
