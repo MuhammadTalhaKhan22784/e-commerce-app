@@ -4,7 +4,7 @@ import "./Card.css";
 // assets
 import arrow from "../../Assets/Vector (1).svg";
 import compare from "../../Assets/compare (1) 1.svg";
-import detail from "../../Assets/Frame 16640.svg";
+import add from "../../Assets/Vector.svg";
 import AddItemModal from "../Modal/AddItemModal";
 
 const Card = ({ price, cardImgShow }) => {
@@ -20,7 +20,7 @@ const Card = ({ price, cardImgShow }) => {
             {val.newArrival ? <img src={val.newArrival} alt="..." /> : null}
             <div className="add_card_div">
               <p>ADD</p>
-              <AddItemModal />
+              <img src={add} alt="..." />
             </div>
           </div>
           {cardImgShow ? (
@@ -45,10 +45,7 @@ const Card = ({ price, cardImgShow }) => {
                 </div>
                 <input type="checkbox" name="compare" id="compare" />
               </div>
-              <div className="detail_div">
-                <img src={detail} alt="..." />
-                <p>View Details</p>
-              </div>
+              <AddItemModal />
             </div>
           </div>
         </div>

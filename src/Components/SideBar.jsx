@@ -5,7 +5,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import clsx from "clsx";
 import "./Style/SideBar.css";
 // assets
@@ -63,6 +63,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SideBar() {
   const classes = useStyles();
+  const history = useHistory();
   const [state, setState] = React.useState({
     left: false,
   });
@@ -88,7 +89,13 @@ export default function SideBar() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <div className="mob_top_logo">
-        <img src={logo} alt="..." />
+        <img
+          src={logo}
+          onClick={() => {
+            history.push("/");
+          }}
+          alt="..."
+        />
         <p>&times;</p>
       </div>
       <List>
@@ -106,10 +113,10 @@ export default function SideBar() {
         </div>
         <div>
           <NavLink
-            exact
-            activeClassName="activeLink"
+            // exact
+            // activeClassName="activeLink"
             className="sidebar_mob_link"
-            to="/qu"
+            to="#"
           >
             <img src={qu} alt="..." />
             <p>Quote</p>
@@ -202,7 +209,15 @@ export default function SideBar() {
             }}
             anchor="left"
           >
-            <img className="web_logo" src={logo} alt="" />
+            <img
+              className="web_logo"
+              onClick={() => {
+                history.push("/");
+              }}
+              src={logo}
+              alt="..."
+            />
+
             <List>
               <div className="home_links">
                 <NavLink
@@ -218,10 +233,10 @@ export default function SideBar() {
               </div>
               <div>
                 <NavLink
-                  exact
-                  activeClassName="activeLink"
+                  // exact
+                  // activeClassName="activeLink"
                   className="sidebar_link"
-                  to="/qu"
+                  to="#"
                 >
                   <img src={qu} alt="..." />
                   <p>Quote</p>

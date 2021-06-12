@@ -63,11 +63,12 @@
 .card_top_div {
   padding-right: 10px;
 }
-.add_card_div button {
+.detail_div {
   background: none !important;
   border: none !important;
   cursor: pointer !important;
   margin-top: 5px;
+  width: max-content !important;
 }
 
 .add_card_div > p {
@@ -125,7 +126,7 @@
 }
 .detail_div {
   margin-top: 25px;
-  padding: 0px 20px;
+  margin-left: 20px;
 }
 .detail_div > p {
   margin-left: 10px;
