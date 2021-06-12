@@ -57,10 +57,10 @@
 .card_top_div {
   padding-right: 10px;
 }
-.add_card_div > button {
-  background: none;
-  border: none;
-  cursor: pointer;
+.add_card_div  button {
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
 }
 
 .add_card_div > p {

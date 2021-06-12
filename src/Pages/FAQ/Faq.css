@@ -29,3 +29,23 @@
 .faq_content {
     width: 100%;
 }
+
+@media screen and (max-width:990px) {
+  .faq_section {
+    margin: 89px auto;
+    padding-left: 0;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width:735px) {
+  .fq_c {
+    display: none;
+  }
+  .faq_header {
+    padding: 0;
+  }
+  .faq_header div {
+    width: unset;
+  }
+}

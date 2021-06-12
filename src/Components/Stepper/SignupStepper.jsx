@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import CCLogo from "../../Assets/CC_Logo_final 2.svg";
 import "../Style/SignupStepper.css";
 import Signup from "../../Pages/Form/Signup";
+import SignupTwo from "../../Pages/Form/SignupTwo";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,9 +32,7 @@ function getStepContent(stepIndex) {
     case 0:
       return <Signup />;
     case 1:
-      return "What is an ad group anyways?";
-    case 2:
-      return "This is the bit I really care about!";
+      return <SignupTwo />;
     default:
       return "Unknown stepIndex";
   }
@@ -48,10 +47,6 @@ export default function SignupStepper() {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
   const handleReset = () => {
     setActiveStep(0);
   };
@@ -59,17 +54,9 @@ export default function SignupStepper() {
   return (
     <div className="signup_section">
       <div className="s_stepper">
-        {/* <Stepper activeStep={activeStep} alternativeLabel>
-        {steps.map((label) => (
-          <Step key={label}>
-             <StepLabel> </StepLabel> 
-
-          </Step>
-        ))}
-      </Stepper> */}
         <img src={CCLogo} />
 
-        <div >
+        <div>
           {activeStep === steps.length ? (
             <div>
               <Typography className={classes.instructions}>
@@ -79,22 +66,24 @@ export default function SignupStepper() {
             </div>
           ) : (
             <div className="s_stepper_content">
-              <div>
-                {getStepContent(activeStep)}
-              </div>
+              <div>{getStepContent(activeStep)}</div>
 
               <div>
                 <Button
                   variant="contained"
                   onClick={handleNext}
-                  className="start_btn"
+                  className="stepper_btn"
                 >
                   {activeStep === steps.length - 1 ? "Finish" : "START"}
                 </Button>
               </div>
             </div>
           )}
-          <Stepper className="stepper_step" activeStep={activeStep} alternativeLabel>
+          <Stepper
+            className="stepper_step"
+            activeStep={activeStep}
+            alternativeLabel
+          >
             {steps.map((label) => (
               <Step key={label}>
                 <StepLabel> </StepLabel>
@@ -102,13 +91,14 @@ export default function SignupStepper() {
             ))}
           </Stepper>
           <div className="s_stepper_bottom">
-          <span>© 2020 Collective Contract, Inc. All rights reserved. | <strong>Privacy</strong></span>
+            <span>
+              © 2020 Collective Contract, Inc. All rights reserved. |{" "}
+              <strong>Privacy</strong>
+            </span>
           </div>
         </div>
       </div>
-      <div className="s_stepperimg">
-
-      </div>
+      <div className="s_stepperimg"></div>
     </div>
   );
 }

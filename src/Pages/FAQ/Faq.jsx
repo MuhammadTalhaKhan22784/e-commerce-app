@@ -10,7 +10,7 @@ const Faq = () => {
       <SideBar />
       <div className="faq_section">
         <div className="faq_header">
-          <div></div>
+          <div className="fq_c"></div>
           <h2>F.A.Q.</h2>
           <ReportModal />
         </div>

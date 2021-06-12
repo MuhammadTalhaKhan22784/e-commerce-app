@@ -6,27 +6,22 @@ import { Box } from "@material-ui/core";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import MuiDialogContent from "@material-ui/core/DialogContent";
 import MuiDialogActions from "@material-ui/core/DialogActions";
+import SwitchToggle from "../Switch";
 // assets
 import IconButton from "@material-ui/core/IconButton";
-import CloseIcon from "@material-ui/icons/Close";
 import add from "../../Assets/Vector.svg";
+import AddIcon from "../../Assets/add-icon.png";
+import closeBtnIcon from "../../Assets/close-btn-icon.png";
 import item1 from "../../Assets/item1.png";
 import item1s from "../../Assets/item1s.png";
 import iicon from "../../Assets/iicon.png";
 import dollarIcon from "../../Assets/dollar-circle.png";
 import fileIcon from "../../Assets/file-icon.png";
 import modelIcon from "../../Assets/3dmodel-icon.png";
-import SwitchToggle from "../Switch";
 
 const styles = (theme) => ({
   root: {
     margin: 0,
-  },
-  closeButton: {
-    position: "absolute",
-    right: theme.spacing(1),
-    top: theme.spacing(1),
-    color: theme.palette.grey[500],
   },
 });
 
@@ -34,14 +29,13 @@ const DialogTitle = withStyles(styles)((props) => {
   const { children, classes, onClose, ...other } = props;
   return (
     <MuiDialogTitle disableTypography className="asd" {...other}>
-      {/* <Typography variant="h6">{children}</Typography> */}
       {onClose ? (
         <IconButton
           aria-label="close"
-          className={classes.closeButton}
+          className="close_btn"
           onClick={onClose}
         >
-          <CloseIcon />
+          <img src={closeBtnIcon}/>
         </IconButton>
       ) : null}
     </MuiDialogTitle>
@@ -81,6 +75,7 @@ export default function CustomizedDialogs() {
         aria-labelledby="customized-dialog-title"
         open={open}
         maxWidth="md"
+        style={{borderRadius:"18px !important"}}
       >
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
           Modal title
@@ -101,7 +96,12 @@ export default function CustomizedDialogs() {
             <Box className="amc_2">
               <Box className="amc2_content">
                 <h2>Grove</h2>
-                <Box className="amc2_text1" mt="0.5rem" display="flex" alignItems="center">
+                <Box
+                  className="amc2_text1"
+                  mt="0.5rem"
+                  display="flex"
+                  alignItems="center"
+                >
                   <img src={iicon} alt="..." />
                   <span>Product Information</span>
                 </Box>
@@ -170,17 +170,15 @@ export default function CustomizedDialogs() {
                   <span>Net Price</span>
                   <strong>$189.60</strong>
                 </Box>
-                <Box mt="0.5rem" mb="0.5rem">
-                  <hr />
-                </Box>
                 <Box
-                  mt="0.5rem"
+                  mt="2.6rem"
                   display="flex"
                   alignItems="center"
                   justifyContent="space-between"
                 >
                   <span>Files</span>
                   <Box
+                    className="amc3_text"
                     display="flex"
                     alignItems="center"
                     justifyContent="space-between"
@@ -203,6 +201,7 @@ export default function CustomizedDialogs() {
                     display="flex"
                     alignItems="center"
                     justifyContent="space-between"
+                    className="amc3_text"
                   >
                     <span>Download</span>
                     <img src={modelIcon} alt="..." />
@@ -217,17 +216,26 @@ export default function CustomizedDialogs() {
                   alignItems="center"
                   justifyContent="space-between"
                 >
-                  <span>Net Price</span>
+                  <span>Contracts</span>
                   <SwitchToggle />
+                </Box>
+                <Box mt="0.5rem" mb="0.5rem">
+                  <hr />
                 </Box>
               </Box>
             </Box>
           </Box>
         </DialogContent>
 
-        <DialogActions>
-          <Button autoFocus onClick={handleClose} color="primary">
-            Save changes
+        <DialogActions className="additem_bottom">
+          <Button
+            autoFocus
+            onClick={handleClose}
+            variant="contained"
+            className="addproduct_button"
+            endIcon={<img src={AddIcon} />}
+          >
+            Add Product
           </Button>
         </DialogActions>
       </Dialog>
