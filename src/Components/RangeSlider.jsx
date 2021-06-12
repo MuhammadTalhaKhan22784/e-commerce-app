@@ -52,7 +52,6 @@ export default function CustomizedSlider() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
     dispatch(priceRange(newValue))
-    console.log(newValue)
   };
 
   return (

@@ -55,6 +55,7 @@
   height: 40px;
   border: 1px solid #dedede;
   border-radius: 4px;
+  padding: 10px;
 }
 
 /* additem_model_content */
@@ -208,7 +209,7 @@
   .amc_1,
   .amc_2,
   .amc_3 {
-    width: 50%;
+    width: 90%;
   }
   .amc_2 {
     margin-top: 2rem;

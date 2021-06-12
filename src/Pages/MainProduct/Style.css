@@ -9,7 +9,7 @@
 }
 .filter_head_card_comp{
     margin-left: 20px;
-    width: 75%;
+    width: max-content;
     padding-right: 15px;
     /* border: 2px solid red; */
 }

@@ -24,16 +24,18 @@
 }
 
 .img1 {
-  display: none;
+  display: none !important;
 }
 
  .activeLink .img1 {
   display: block !important;
   margin: 0 auto 5px auto;
+  /* color: white; */
 }
 
 .activeLink .img2 {
-  display: none;
+  display: none !important;
+  /* color:#302C2C; */
 }
 
 .home_links {

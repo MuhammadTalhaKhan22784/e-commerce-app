@@ -10,6 +10,10 @@ body {
   font-family: "Roboto", sans-serif !important;
 }
 
+.MuiAccordion-root:before {
+  height: 0 !important;
+}
+
 input,
 textarea {
   outline: none;

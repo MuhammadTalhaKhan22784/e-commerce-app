@@ -7,25 +7,24 @@ import compare from "../../Assets/compare (1) 1.svg";
 import detail from "../../Assets/Frame 16640.svg";
 import AddItemModal from "../Modal/AddItemModal";
 
-const Card = ({ data, price, cardImgShow }) => {
+const Card = ({ price, cardImgShow }) => {
   const selector = useSelector((state) => {
     return state.cardReducer.cardData;
   });
-  console.log(selector);
 
   return (
     <div className="card_container">
       {selector.map((val) => (
         <div className="card_div" key={val.id}>
           <div className="card_top_div">
-            <img src={val.newArrival} alt="" />
+            {val.newArrival ? <img src={val.newArrival} alt="..." /> : null}
             <div className="add_card_div">
               <p>ADD</p>
               <AddItemModal />
             </div>
           </div>
           {cardImgShow ? (
-            <img className="main_card_img" src={val.cardImg} alt="" />
+            <img className="main_card_img" src={val.cardImg} alt="..." />
           ) : null}
           <div className="card_body_div">
             <h3>{val.title}</h3>

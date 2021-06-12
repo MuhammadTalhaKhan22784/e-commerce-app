@@ -13,22 +13,22 @@ const SignupTwo = () => {
         </div>
         <form action="#" className="s_form s2_form">
           <div>
-            <img src={userIcon} />
+            <img src={userIcon} alt="..." />
             <input type="text" placeholder="Email Address" />
           </div>
           <div>
             <div>
-              <img src={lockIcon} />
+              <img src={lockIcon} alt="..." />
               <input type="password" placeholder="Password" />
             </div>
-            <img src={eyeIcon} />
+            <img src={eyeIcon} alt="..." />
           </div>
           <div>
             <div>
-              <img src={lockIcon} />
+              <img src={lockIcon} alt="..." />
               <input type="password" placeholder="Re-Type Password" />
             </div>
-            <img src={eyeIcon} />
+            <img src={eyeIcon} alt="..." />
           </div>
         </form>
       </div>

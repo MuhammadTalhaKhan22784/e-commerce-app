@@ -14,7 +14,7 @@ const Login = () => {
       <div className="login_section">
         <div className="s_stepper">
           <Link to="/">
-            <img src={CCLogo} />
+            <img src={CCLogo} alt="..."/>
           </Link>
           <div>
             <div className="s_stepper_content">
@@ -24,15 +24,15 @@ const Login = () => {
                 </div>
                 <form action="#" className="s_form s2_form">
                   <div>
-                    <img src={userIcon} />
+                    <img src={userIcon} alt="..."/>
                     <input type="text" placeholder="Email Address" />
                   </div>
                   <div>
                     <div>
-                      <img src={lockIcon} />
+                      <img src={lockIcon} alt="..." />
                       <input type="password" placeholder="Password" />
                     </div>
-                    <img src={eyeIcon} />
+                    <img src={eyeIcon} alt="..."/>
                   </div>
                   <div className="fp_text">
                     <span>

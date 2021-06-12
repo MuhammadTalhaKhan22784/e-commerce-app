@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
@@ -10,19 +9,6 @@ import "../Style/SignupStepper.css";
 import Signup from "../../Pages/Form/Signup";
 import SignupTwo from "../../Pages/Form/SignupTwo";
 import { useHistory } from "react-router-dom";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-  },
-  backButton: {
-    marginRight: theme.spacing(1),
-  },
-  instructions: {
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(1),
-  },
-}));
 
 function getSteps() {
   return ["", ""];
@@ -40,14 +26,13 @@ function getStepContent(stepIndex) {
 }
 
 export default function SignupStepper() {
-  const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
   const history = useHistory();
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    if (activeStep == 1) {
+    if (activeStep === 1) {
       history.push("/login");
     }
   };
@@ -56,7 +41,7 @@ export default function SignupStepper() {
     <div className="signup_section">
       <div className="s_stepper">
         <Link to="/">
-          <img src={CCLogo} />
+          <img src={CCLogo} alt="..." />
         </Link>
         <div>
           <div className="s_stepper_content">

@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Signup from "../Pages/Form/Signup";
 import MainProduct from "../Pages/MainProduct/MainProduct";
 import SignupStepper from "../Components/Stepper/SignupStepper.jsx";
 import UserIndivisual from "../Pages/UserIndivisual/UserIndivisual";

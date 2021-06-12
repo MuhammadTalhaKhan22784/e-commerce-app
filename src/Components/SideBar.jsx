@@ -9,6 +9,7 @@ import { NavLink } from "react-router-dom";
 import clsx from "clsx";
 import "./Style/SideBar.css";
 // assets
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import home from "../Assets/Dashboard icon.svg";
 import dashboardIcon from "../Assets/dashboard-icon.png";
 import settingIcon from "../Assets/settings-icon.png";
@@ -87,7 +88,7 @@ export default function SideBar() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <div className="mob_top_logo">
-          <img src={logo} alt="..." />
+        <img src={logo} alt="..." />
         <p>&times;</p>
       </div>
       <List>
@@ -146,8 +147,8 @@ export default function SideBar() {
           className="sidebar_mob_link"
           to="/signup"
         >
-          <img className="img1" src={settingIcon} alt="..." />
-          <img className="img2" src={setting} alt="..." />
+          <AccountCircleIcon className="img1" />
+          <AccountCircleIcon className="img2" />
           <p>Sign up</p>
         </NavLink>
       </div>
@@ -158,8 +159,8 @@ export default function SideBar() {
           className="sidebar_mob_link"
           to="/login"
         >
-          <img className="img1" src={settingIcon} alt="..." />
-          <img className="img2" src={setting} alt="..." />
+          <AccountCircleIcon className="img1" />
+          <AccountCircleIcon className="img2" />
           <p>Login</p>
         </NavLink>
       </div>
@@ -201,7 +202,7 @@ export default function SideBar() {
             }}
             anchor="left"
           >
-              <img className="web_logo" src={logo} alt="" />
+            <img className="web_logo" src={logo} alt="" />
             <List>
               <div className="home_links">
                 <NavLink
@@ -259,8 +260,8 @@ export default function SideBar() {
                   className="sidebar_link"
                   to="/signup"
                 >
-                  <img className="img1" src={settingIcon} alt="..." />
-                  <img className="img2" src={setting} alt="..." />
+                  <AccountCircleIcon className="img1" />
+                  <AccountCircleIcon className="img2" />
                   <p>Sign up</p>
                 </NavLink>
               </div>
@@ -271,8 +272,8 @@ export default function SideBar() {
                   className="sidebar_link"
                   to="/login"
                 >
-                  <img className="img1" src={settingIcon} alt="..." />
-                  <img className="img2" src={setting} alt="..." />
+                  <AccountCircleIcon className="img1" />
+                  <AccountCircleIcon className="img2" />
                   <p>Login</p>
                 </NavLink>
               </div>

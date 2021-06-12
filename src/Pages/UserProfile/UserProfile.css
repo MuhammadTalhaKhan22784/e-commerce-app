@@ -9,7 +9,7 @@
   background: white;
   display: flex;
   padding: 20px;
-  font-family: 'Inter', sans-serif !important;
+  font-family: "Inter", sans-serif !important;
 }
 
 .userprofile_form h2 {
@@ -42,21 +42,20 @@
   margin-top: 8px;
 }
 
-@media screen and (max-width:990px) {
+@media screen and (max-width: 990px) {
   .user_profile_section {
     margin-left: 0;
     margin-top: 74px;
   }
   .userprofile_form {
     width: 100%;
-    height: max-content;
+    min-height: 100vh;
   }
 }
 
-@media screen and (max-width:630px) {
+@media screen and (max-width: 630px) {
   .userprofile_form {
     flex-direction: column;
     align-items: center;
   }
-  
 }

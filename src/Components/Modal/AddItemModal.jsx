@@ -31,7 +31,7 @@ const DialogTitle = withStyles(styles)((props) => {
     <MuiDialogTitle disableTypography className="asd" {...other}>
       {onClose ? (
         <IconButton aria-label="close" className="close_btn" onClick={onClose}>
-          <img src={closeBtnIcon} />
+          <img src={closeBtnIcon} alt="..."/>
         </IconButton>
       ) : null}
     </MuiDialogTitle>
@@ -255,7 +255,7 @@ export default function CustomizedDialogs() {
             onClick={handleClose}
             variant="contained"
             className="addproduct_button"
-            endIcon={<img src={AddIcon} />}
+            endIcon={<img src={AddIcon} alt="..."/>}
           >
             Add Product
           </Button>

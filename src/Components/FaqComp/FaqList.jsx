@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
   heading: {
     fontSize: theme.typography.pxToRem(15),
     flexShrink: 0,
+    width:"95%",
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   list: {
     marginTop: 10,
-    border: "1px solid #dedede",
+    border: "0.5px solid #E9E9E9",
     boxShadow: "none",
     borderRadius: 6,
   },
@@ -80,7 +81,6 @@ export default function FaqList() {
         </AccordionDetails>
       </Accordion>
       <Accordion
-        // expanded={expanded === "panel2"}
         onChange={()=>handleChange("panel2")}
         className={classes.list}
       >
