@@ -1,108 +1,137 @@
-.card_container{
-    display: flex;
-    /* justify-content: space-between; */
-    flex-wrap: wrap;
-    max-height: 900px;
-    overflow-y: scroll;
-    margin-top: 20px;
+.card_container {
+  display: flex;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+  max-height: 900px;
+  overflow-y: scroll;
+  margin-top: 20px;
 }
-.card_container::-webkit-scrollbar{
-    width: 8px;
+.card_container::-webkit-scrollbar {
+  width: 8px;
 }
-.card_container::-webkit-scrollbar-thumb{
-    background-color: #0075FF;
-    border-radius: 10px;
+.card_container::-webkit-scrollbar-thumb {
+  background-color: #0075ff;
+  border-radius: 10px;
 }
-.card_container::-webkit-scrollbar-track{
-    background-color: #F5F5F5;
+.card_container::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
 }
-.card_div{
-    width: 250px;
-    /* text-align: center; */
-    /* padding: 10px 20px; */
-    border: 1px solid #DEDEDE;
-    border-radius: 10px;
-    background-color: white;
-    /* margin: 50px auto; */
-    margin-top: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
+.card_div {
+  width: 250px;
+  /* text-align: center; */
+  /* padding: 10px 20px; */
+  border: 1px solid #dedede;
+  border-radius: 10px;
+  background-color: white;
+  /* margin: 50px auto; */
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.card_top_div {
+  /* padding-top: 10px 0px; */
+  margin-top: 10px;
+  position: relative;
+}
+.card_top_div > img {
+  position: absolute;
+  /* right: 10px; */
+  left: -10px;
+}
+.card_body_div {
+  margin-top: 15px;
+}
+.card_body_div > p,
+.card_body_div > h3 {
+  margin-top: 7px;
+  padding: 0px 20px;
+}
+.main_card_img {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  margin-top: 40px;
+}
+.card_top_div {
+  padding-right: 10px;
+}
+.add_card_div > button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
+.add_card_div > p {
+  margin-right: 8px;
+  color: #0075ff;
+  font-weight: 500;
 }
-.card_top_div{
-   /* padding-top: 10px 0px; */
-   margin-top: 10px;
-   position: relative;
+.add_card_div {
+  display: flex;
+  justify-content: flex-end;
 }
-.card_top_div>img{
-    position: absolute;
-    /* right: 10px; */
-    left: -10px;
+.card_net_div,
+.card_compare_div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.card_body_div>p , .card_body_div>h3{
-    margin-top: 7px;
-    padding: 0px 20px;
+.add_card_div,
+.net_img,
+.compare_img,
+.detail_div {
+  display: flex;
+  align-items: center;
 }
-.main_card_img{
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto;
-    margin-top: 40px;
+.card_net_div {
+  margin-top: 20px;
+  padding: 0px 20px;
 }
-.card_top_div{
-    padding-right: 10px;
+.card_compare_div {
+  /* margin-top: 15px; */
+  padding: 0px 20px;
+  padding-right: 25px;
 }
-.add_card_div>p{
-    margin-right: 8px;
-    color: #0075FF;
-    font-weight: 500;
+.net_img > p {
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 0.85rem;
 }
-.add_card_div{
-    display: flex;
-    justify-content: flex-end;
+.compare_img > p {
+  margin-left: 10px;
+  font-size: 0.85rem;
 }
-.card_net_div,.card_compare_div{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.compared_main_div {
+  background: #f5f5f5;
+  padding: 10px 0px;
+  margin-top: 10px;
 }
-.add_card_div,.net_img,.compare_img,.detail_div{
-    display: flex;
-    align-items: center;
+.detail_div {
+  margin-top: 25px;
+  padding: 0px 20px;
 }
-.card_net_div{
-    margin-top: 20px;
-    padding: 0px 20px;
+.detail_div > p {
+  margin-left: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #0075ff;
 }
-.card_compare_div{
-    /* margin-top: 15px; */
-    padding: 0px 20px;
-    padding-right: 25px;
+@media screen and (max-width: 1293px) {
+  .card_div {
+    width: auto;
+  }
 }
-.net_img>p{
-    margin-left: 10px;
-    font-weight: 500;
-    font-size: .85rem;
-
+@media screen and (max-width: 500px) {
+  .card_div {
+    width: 300px;
+    margin: 10px auto;
+  }
 }
-.compare_img>p{
-    margin-left: 10px;
-    font-size: .85rem;
-}
-.compared_main_div{
-    background: #F5F5F5;
-    padding: 10px 0px;
-    margin-top: 10px;
-}
-.detail_div{
-    margin-top: 25px;
-    padding: 0px 20px;
-}
-.detail_div>p{
-    margin-left: 10px;
-    font-size: .85rem;
-    font-weight: 500;
-    color: #0075FF;
+@media screen and (max-width: 350px) {
+  .card_div {
+    width: 90%;
+    margin: 10px auto;
+  }
 }

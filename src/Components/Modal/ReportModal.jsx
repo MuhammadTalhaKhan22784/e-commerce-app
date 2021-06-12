@@ -20,9 +20,6 @@ const styles = (theme) => ({
     color: "#302C2C",
   },
   closeButton: {
-    // position: "absolute",
-    // right: theme.spacing(1),
-    // top: theme.spacing(1),
     color: "#302C2C",
     padding: "0",
   },
@@ -80,6 +77,7 @@ export default function CustomizedDialogs() {
         Report an issue
       </Button>{" "}
       <Dialog
+      onBackdropClick="false"
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
