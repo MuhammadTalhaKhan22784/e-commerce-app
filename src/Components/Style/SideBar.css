@@ -13,7 +13,7 @@
   margin: 0px auto;
   margin-left: 12px;
   text-decoration: none;
-  color: #302C2C;
+  color: #302c2c;
   font-family: "Inter", sans-serif !important;
 }
 .activeLink {
@@ -27,15 +27,13 @@
   display: none !important;
 }
 
- .activeLink .img1 {
+.activeLink .img1 {
   display: block !important;
   margin: 0 auto 5px auto;
-  /* color: white; */
 }
 
 .activeLink .img2 {
   display: none !important;
-  /* color:#302C2C; */
 }
 
 .home_links {
@@ -71,6 +69,9 @@
   justify-content: center;
   margin-top: 10px auto;
 }
+.sidebar_mob_link svg {
+  color: black !important;
+}
 .mob_top_logo {
   display: flex;
   justify-content: space-between;
@@ -87,6 +88,7 @@
 .sidebar_mob_link p {
   margin-left: 10px;
   width: 50px;
+  color: #302c2c;
 }
 
 /* cart side bar  */
@@ -185,16 +187,16 @@
   }
   .cart_table th {
     padding: 10px 5px;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
   .pro_info_td span {
     margin-left: 5px;
     font-weight: 500;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
-  .cart_pro_img{
-   width: 30px;
-  } 
+  .cart_pro_img {
+    width: 30px;
+  }
 }
 @media screen and (max-width: 300px) {
   .cart_sidebar_container {
@@ -202,6 +204,6 @@
   }
   .cart_table th {
     padding: 10px 5px;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }
