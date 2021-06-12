@@ -1,7 +1,7 @@
 .signup_section {
   width: 100%;
   /* max-height: 120vh; */
-  /* height: max-content; */
+  min-height: 100vh;
   display: flex;
 }
 
@@ -109,9 +109,16 @@
 .s_stepperimg {
   width: 50%;
   height: auto;
-  background-image: url("../../Assets/signup_right_bg.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+
+.s_img1 {
+  background-image: url("../../Assets/signup_right_bg.png");
+}
+
+.s_img2 {
+  background-image: url("../../Assets/signup_right_bg2.png");
 }
 
 @media screen and (max-width: 900px) {

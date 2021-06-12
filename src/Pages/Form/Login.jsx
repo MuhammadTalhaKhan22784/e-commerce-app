@@ -52,7 +52,7 @@ const Login = () => {
           </div>
           </div>
         </div>
-        <div className="s_stepperimg"></div>
+        <div className="s_stepperimg s_img2"></div>
 
       </div>
     </React.Fragment>

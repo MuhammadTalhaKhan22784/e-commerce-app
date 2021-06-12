@@ -30,12 +30,8 @@ const DialogTitle = withStyles(styles)((props) => {
   return (
     <MuiDialogTitle disableTypography className="asd" {...other}>
       {onClose ? (
-        <IconButton
-          aria-label="close"
-          className="close_btn"
-          onClick={onClose}
-        >
-          <img src={closeBtnIcon}/>
+        <IconButton aria-label="close" className="close_btn" onClick={onClose}>
+          <img src={closeBtnIcon} />
         </IconButton>
       ) : null}
     </MuiDialogTitle>
@@ -71,11 +67,12 @@ export default function CustomizedDialogs() {
         <img src={add} alt="..." />
       </button>
       <Dialog
+      PaperProps={{className:"additem_modal"}}
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
         maxWidth="md"
-        style={{borderRadius:"18px !important"}}
+        style={{ borderRadius: "18px !important" }}
       >
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
           Modal title
@@ -86,10 +83,34 @@ export default function CustomizedDialogs() {
             <Box className="amc_1">
               <Box className="amc1_content">
                 <img src={item1} alt="..." />
-                <Box>
-                  <img src={item1s} alt="..." />
-                  <img src={item1s} alt="..." />
-                  <img src={item1s} alt="..." />
+                <Box className="amc1_sub_items"> 
+                  <input
+                    type="radio"
+                    style={{ display: "none" }}
+                    id="item1"
+                    name="box"
+                  />
+                  <label htmlFor="item1" className="item_select">
+                    <img className="item_s" src={item1s} alt="..." />
+                  </label>
+                  <input
+                    type="radio"
+                    style={{ display: "none" }}
+                    id="item2"
+                    name="box"
+                  />
+                  <label htmlFor="item2" className="item_select">
+                    <img className="item_s" src={item1s} alt="..." />
+                  </label>
+                  <input
+                    type="radio"
+                    style={{ display: "none" }}
+                    id="item3"
+                    name="box"
+                  />
+                  <label htmlFor="item3" className="item_select">
+                    <img className="item_s" src={item1s} alt="..." />
+                  </label>
                 </Box>
               </Box>
             </Box>

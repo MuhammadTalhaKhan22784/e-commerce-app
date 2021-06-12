@@ -60,7 +60,7 @@
 /* additem_model_content */
 
 .additem_modal {
-  max-width: 800px !important;
+  border-radius: 15px !important;
 }
 
 .additem_model_content {
@@ -105,6 +105,22 @@
 .amc_1 {
   text-align: center;
 }
+
+/* select items */
+
+#item1:checked + label,
+#item2:checked + label,
+#item3:checked + label {
+  border: 1.9px solid #0075ff;
+  border-radius: 4px;
+}
+
+.item_select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .amc_2 strong {
   margin-top: 5px;

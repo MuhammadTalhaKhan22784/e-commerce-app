@@ -40,7 +40,6 @@ export default function FaqList() {
     <div className={classes.root}>
    
       <Accordion
-        // expanded={expanded === "panel1"}
         onChange={()=>handleChange("panel1")}
         className={classes.list}
       >
@@ -49,7 +48,7 @@ export default function FaqList() {
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
-          <Typography className={classes.heading}>Product Type</Typography>
+          <Typography className={classes.heading}>How do I change the column edits before export?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <div className="filter_check">
@@ -90,7 +89,7 @@ export default function FaqList() {
           aria-controls="panel2bh-content"
           id="panel2bh-header"
         >
-          <Typography className={classes.heading}>Users</Typography>
+          <Typography className={classes.heading}>How do I change the column edits before export?</Typography>
         </AccordionSummary>
         <AccordionDetails>
         <div className="filter_check">
@@ -122,7 +121,6 @@ export default function FaqList() {
         </AccordionDetails>
       </Accordion>
       <Accordion
-        // expanded={expanded === "panel3"}
         onChange={()=>handleChange("panel3")}
         className={classes.list}
       >
@@ -131,7 +129,7 @@ export default function FaqList() {
           aria-controls="panel3bh-content"
           id="panel3bh-header"
         >
-          <Typography className={classes.heading}>Advanced settings</Typography>
+          <Typography className={classes.heading}>How do I change the column edits before export?</Typography>
         </AccordionSummary>
         <AccordionDetails>
         <div className="filter_check">

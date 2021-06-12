@@ -98,7 +98,9 @@ export default function SignupStepper() {
           </div>
         </div>
       </div>
-      <div className="s_stepperimg"></div>
+      <div
+        className={`s_stepperimg ${activeStep === 0 ? "s_img1" : "s_img2"}`}
+      ></div>
     </div>
   );
 }

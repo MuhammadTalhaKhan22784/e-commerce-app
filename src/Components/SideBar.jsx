@@ -90,6 +90,7 @@ export default function SideBar() {
       <List>
         <div className="home_links">
           <NavLink
+            exact
             activeClassName="activeLink"
             className="sidebar_mob_link"
             to="/"
@@ -100,6 +101,7 @@ export default function SideBar() {
         </div>
         <div>
           <NavLink
+            exact
             activeClassName="activeLink"
             className="sidebar_mob_link"
             to="/qu"
@@ -111,6 +113,7 @@ export default function SideBar() {
       </List>
       <div>
         <NavLink
+          exact
           activeClassName="activeLink"
           className="sidebar_mob_link"
           to="/faq"
@@ -121,6 +124,7 @@ export default function SideBar() {
       </div>
       <div>
         <NavLink
+          exact
           activeClassName="activeLink"
           className="sidebar_mob_link"
           to="/setting"
@@ -171,6 +175,7 @@ export default function SideBar() {
             <List>
               <div className="home_links">
                 <NavLink
+                  exact
                   activeClassName="activeLink"
                   className="sidebar_link"
                   to="/"
@@ -181,6 +186,7 @@ export default function SideBar() {
               </div>
               <div>
                 <NavLink
+                  exact
                   activeClassName="activeLink"
                   className="sidebar_link"
                   to="/qu"
@@ -193,6 +199,7 @@ export default function SideBar() {
             <List className="faq_links">
               <div>
                 <NavLink
+                  exact
                   activeClassName="activeLink"
                   className="sidebar_link"
                   to="/faq"
@@ -203,6 +210,7 @@ export default function SideBar() {
               </div>
               <div>
                 <NavLink
+                  exact
                   activeClassName="activeLink"
                   className="sidebar_link"
                   to="/setting"
