@@ -68,6 +68,8 @@
   border: none !important;
   cursor: pointer !important;
   margin-top: 5px;
+  width: -webkit-max-content !important;
+  width: -moz-max-content !important;
   width: max-content !important;
 }
 
@@ -79,6 +81,9 @@
 .add_card_div {
   display: flex;
   justify-content: flex-end;
+}
+.add_card_div img {
+  cursor: pointer;
 }
 .card_net_div,
 .card_compare_div {

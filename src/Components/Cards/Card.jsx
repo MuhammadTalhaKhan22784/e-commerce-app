@@ -1,5 +1,6 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import {addCartItem} from '../../GlobalState/CreateSlice'
 import "./Card.css";
 // assets
 import arrow from "../../Assets/Vector (1).svg";
@@ -8,9 +9,14 @@ import add from "../../Assets/Vector.svg";
 import AddItemModal from "../Modal/AddItemModal";
 
 const Card = ({ price, cardImgShow }) => {
+  const dispatch= useDispatch()
   const selector = useSelector((state) => {
     return state.cardReducer.cardData;
   });
+
+  const handleAddItem =(e) =>{
+     dispatch(addCartItem(e))
+  } 
 
   return (
     <div className="card_container">
@@ -18,7 +24,7 @@ const Card = ({ price, cardImgShow }) => {
         <div className="card_div" key={val.id}>
           <div className="card_top_div">
             {val.newArrival ? <img src={val.newArrival} alt="..." /> : null}
-            <div className="add_card_div">
+            <div className="add_card_div" onClick={()=>handleAddItem(val.id)} >
               <p>ADD</p>
               <img src={add} alt="..." />
             </div>

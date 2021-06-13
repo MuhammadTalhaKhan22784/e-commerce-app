@@ -57,9 +57,48 @@ const cardSlice = createSlice({
       });
       state.tags = filterDlt;
     },
+    addCartItem: (state, action) => {
+      // const checkcart = state.cart.filter((res) => res.id !== action.payload);
+      const cartItemFilter = state.filteredData.filter(
+        (val) => val.id === action.payload 
+      );
+      state.cart = [...state.cart, cartItemFilter];
+    },
+    addQty: (state, action) => {
+      state.cart.filter((val) => {
+        val.map((value) => {
+          if (value.id === action.payload) {
+            value.qty++;
+          }
+          return value;
+        });
+        return val;
+      });
+    },
+    minusQty: (state, action) => {
+      state.cart.filter((val) => {
+        val.map((value) => {
+          if (value.id === action.payload) {
+            if (value.qty > 0) {
+              value.qty--;
+            }
+          }
+          return value;
+        });
+        return val;
+      });
+    },
   },
 });
 
-export const { dataAtoZ, highToLow, priceRange, tagsAdd, deleteTags } =
-  cardSlice.actions;
+export const {
+  dataAtoZ,
+  highToLow,
+  priceRange,
+  tagsAdd,
+  deleteTags,
+  addCartItem,
+  minusQty,
+  addQty,
+} = cardSlice.actions;
 export const cardReducer = cardSlice.reducer;

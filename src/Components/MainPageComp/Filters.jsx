@@ -60,7 +60,7 @@ const Filters = ({ partfunc, handleShowPrice, price, handleImg, cardImgT }) => {
             </div>
             <div className="margin_box">
               {margin.map((val) => (
-                <p key={val}>{val}%</p>
+                <button key={val}>{val}%</button>
               ))}
             </div>
             <div className="margin_counter">

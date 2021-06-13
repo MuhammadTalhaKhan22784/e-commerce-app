@@ -98,7 +98,7 @@ export default function SideBar() {
         />
         <p>&times;</p>
       </div>
-      <List>
+      <List style={{ paddingBottom: "0px" }}>
         <div className="home_links">
           <NavLink
             exact

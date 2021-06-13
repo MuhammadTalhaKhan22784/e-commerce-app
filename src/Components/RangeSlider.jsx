@@ -4,6 +4,7 @@ import Slider from "@material-ui/core/Slider";
 import RangeSliderLine from "./RangeSliderLine";
 import {priceRange} from '../GlobalState/CreateSlice'
 import {useDispatch} from 'react-redux'
+import { Box } from "@material-ui/core";
 
 
 const AirbnbSlider = withStyles({
@@ -64,6 +65,10 @@ export default function CustomizedSlider() {
         min={min}
         max={max}
       />
+      <Box className="range_bottom_text" display="flex" alignItems="center" justifyContent="space-between">
+        <span style={{color:"#9B9B9B"}}>{`$${value[0]}`}</span>
+        <span style={{color:"#0075FF", fontWeight:600}}>{`$${value[1]}`}</span>
+      </Box>
     </div>
   );
 }

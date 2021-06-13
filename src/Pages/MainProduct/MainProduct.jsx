@@ -7,16 +7,24 @@ import { carddata } from "./cardData";
 // assets
 import topArr from "../../Assets/arrow-right 3.svg";
 import "./Style.css";
+import { useEffect } from "react";
+import { useRef } from "react";
 
 const MainProduct = () => {
-  const [width] = React.useState(window.innerWidth);
+  const header = useRef()
   // top button show
-  window.addEventListener("scroll", function () {
-    var header = document.querySelector(".top_arrow_div");
-    if (width < 990) {
-      header.classList.add("showTop", window.scrollY > 400);
+  useEffect(()=>{
+    const handleScroll = function () {
+      if(!header.current) return;
+      if (window.innerWidth < 990) {
+        header.current.classList.add("showTop", window.scrollY > 400);
+      }
     }
-  });
+    window.addEventListener("scroll", handleScroll);
+    return()=>{
+      window.removeEventListener("scroll", handleScroll);
+    }
+  },[])
   // end
 
   let [partNum, setPartNum] = useState("");
@@ -64,9 +72,9 @@ const MainProduct = () => {
             data={inpFilterFunc(carddata)}
           />
         </div>
-        <div className="top_arrow_div">
+        <div ref={header} className="top_arrow_div">
           <a href="#top">
-            <img src={topArr} alt="" />
+            <img src={topArr} alt="..." />
             <p>Top</p>
           </a>
         </div>
