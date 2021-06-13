@@ -4,6 +4,8 @@ import Accordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
+import {useSelector,useDispatch} from 'react-redux'
+import {tagsAdd} from '../../GlobalState/CreateSlice'
 // assets
 import more from "../../Assets/sort-down.svg";
 
@@ -28,34 +30,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const listItem = {
-  productName: [
-    "Desks and Workspace",
-    "Healthcare",
-    "Accessories",
-    "JSI",
-    "Tables",
-    "Seating",
-  ],
-  user: [
-    "Traninig Tables",
-    "Lounge Seating",
-    "Benches & Ottomans",
-    "Occasional Tables",
-    "Side Chairs",
-    "Task Chairs",
-  ],
-  advanced: [
-    "AIS",
-    "Darran",
-    "JSI",
-    "Element Contract",
-    "Stance Healthcare",
-    "Hush Office",
-  ],
-};
-
 export default function ControlledAccordions() {
+  const dispatch = useDispatch();
+  const selector = useSelector((state)=>{
+    return state.cardReducer.checkbox
+  })
+  // console.log(selector)
+
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState({
     panel1: false,
@@ -66,6 +47,13 @@ export default function ControlledAccordions() {
   const handleChange = (panel) => {
     setExpanded({ ...expanded, [panel]: !expanded[panel] });
   };
+
+  const handleChecked = (e)=>{
+    const checked = e.target.checked 
+    const cValue = e.target.value 
+    const dataid = e.target.dataset.id
+      dispatch(tagsAdd({checked,dataid,cValue}))
+  }
 
   return (
     <div className={classes.root}>
@@ -82,10 +70,18 @@ export default function ControlledAccordions() {
         </AccordionSummary>
         <AccordionDetails>
           <div className="filter_check">
-            {listItem.productName.map((val) => (
-              <label key={val} htmlFor={val}>
-                <input type="checkbox" name={val} id={val} />
-                <p>{val}</p>
+            {selector.slice(0, 6).map((val, id) => (
+              <label key={val.val} htmlFor={val.val}>
+                <input
+                  type="checkbox"
+                  onChange={handleChecked}
+                  data-id={id}
+                  value={val.val}
+                  name={val.val}
+                  id={val.val}
+                  checked={val.bool}
+                />
+                <p>{val.val}</p>
               </label>
             ))}
           </div>
@@ -105,10 +101,18 @@ export default function ControlledAccordions() {
         </AccordionSummary>
         <AccordionDetails>
           <div className="filter_check">
-            {listItem.user.map((val) => (
-              <label key={val} htmlFor={val}>
-                <input type="checkbox" name={val} id={val} />
-                <p>{val}</p>
+            {selector.slice(6, 12).map((val, id) => (
+              <label key={val.val} htmlFor={val.val}>
+                <input
+                  type="checkbox"
+                  onChange={handleChecked}
+                  data-id={id +6}
+                  value={val.val}
+                  name={val.val}
+                  id={val.val}
+                  checked={val.bool}
+                />
+                <p>{val.val}</p>
               </label>
             ))}
           </div>
@@ -127,10 +131,18 @@ export default function ControlledAccordions() {
         </AccordionSummary>
         <AccordionDetails>
           <div className="filter_check">
-            {listItem.advanced.map((val) => (
-              <label key={val} htmlFor={val}>
-                <input type="checkbox" name={val} id={val} />
-                <p>{val}</p>
+            {selector.slice(12, 18).map((val, id) => (
+              <label key={val.val} htmlFor={val.val}>
+                <input
+                  type="checkbox"
+                  onChange={handleChecked}
+                  data-id={id +12}
+                  value={val.val}
+                  name={val.val}
+                  id={val.val}
+                  checked={val.bool}
+                />
+                <p>{val.val}</p>
               </label>
             ))}
           </div>
