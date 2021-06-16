@@ -1,0 +1,45 @@
+.userlist_section {
+  margin-top: 89px;
+  padding-left: 8rem;
+  width: 100%;
+}
+
+.ul_header {
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ul_table {
+  width: 97%;
+  margin-top: 3rem;
+}
+
+.ul_table .MuiTableContainer-root {
+  box-shadow: none;
+  border: 1px solid #eceef3;
+}
+
+.ul_text_1 span {
+  color: #3a485a;
+  opacity: 0.6;
+  font-weight: 500 !important;
+}
+
+.ul_text_1 strong {
+  color: #3a485a;
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+}
+
+.ul_table th {
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 700;
+}
+
+.ul_table td {
+  font-family: "Inter", sans-serif !important;
+  color: #3a485a;
+  font-weight: 700;
+  font-size: 0.9rem;
+}

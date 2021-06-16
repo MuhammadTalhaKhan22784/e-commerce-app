@@ -1,0 +1,52 @@
+.quote_section {
+  margin-top: 89px;
+  padding-left: 8rem;
+  width: 100%;
+}
+
+.qu_box {
+  width: 98%;
+}
+
+.qu_table {
+  width: 98%;
+}
+
+.qu_item1 {
+  display: flex;
+  align-items: center;
+}
+
+.qu_item1 img {
+  width: 30px;
+  object-fit: contain;
+}
+
+.MuiTableCell-paddingCheckbox {
+  width: 48px !important;
+}
+
+.qu_table .MuiTablePagination-input {
+  display: none;
+}
+
+.qu_table .MuiTablePagination-actions {
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.qu_table .MuiTablePagination-input {
+  position: relative !important;
+  left: 130px !important;
+}
+
+.qu_table .MuiTablePagination-caption{
+  position: relative;
+  left: 127px;
+  margin-left: 49px;
+}
+
+.qu_table span {
+  width: max-content;
+}
