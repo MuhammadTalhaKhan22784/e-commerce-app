@@ -9,6 +9,7 @@
   margin-left: 20px;
   width: 80%;
   padding-right: 15px;
+  max-width: 72%;
 }
 
 .top_arrow_div {
@@ -23,6 +24,12 @@
 }
 .showTop {
   display: none;
+}
+@media screen and (max-width: 1300px) {
+  .filter_head_card_comp{
+    /* max-width: min-content ; */
+    min-width: 40%;
+  }
 }
 @media screen and (max-width: 990px) {
   .main_page_container {
@@ -65,6 +72,9 @@
   .margin_box > p,
   .margin_counter > p {
     margin: 5px;
+  }
+  .filter_head_card_comp{
+    max-width: 100%;
   }
 }
 @media screen and (max-width: 335px) {

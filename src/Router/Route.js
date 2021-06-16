@@ -8,6 +8,8 @@ import Quote from "../Pages/Quote/Quote";
 import Faq from "../Pages/FAQ/Faq";
 import Login from "../Pages/Form/Login";
 import UserList from "../Pages/UserList/UserList";
+import AdminDashboard from "../Pages/Admin/AdminDashboard";
+import ComparePage from "../Pages/MainProduct/ComparePage";
 const AppRoute = () => {
   return (
     <Router>
@@ -20,6 +22,8 @@ const AppRoute = () => {
         <Route exact path="/login" component={Login} />
         <Route exact path="/qu" component={Quote} />
         <Route exact path="/user-list" component={UserList} />
+        <Route exact path="/compare" component={ComparePage} />
+        <Route exact path="/admin" component={AdminDashboard} />
       </Switch>
     </Router>
   );
