@@ -18,6 +18,11 @@ button {
   text-transform: initial !important;
 }
 
+a {
+  color: initial;
+  text-decoration: initial;
+}
+
 input,
 textarea {
   outline: none;

@@ -13,6 +13,7 @@ import { Box, TableFooter } from "@material-ui/core";
 import { Pagination } from "@material-ui/lab";
 import { useState } from "react";
 import { visibleGridColumnsSelector } from "@material-ui/data-grid";
+import { useHistory } from "react-router-dom";
 const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: "#0075FF",
@@ -118,6 +119,7 @@ export default function UserListTable() {
   const classes = useStyles();
   const [val, setVal] = useState(0);
   const [rowsPerpage] = useState(3);
+  const history = useHistory();
   return (
     <React.Fragment>
       <TableContainer component={Paper}>
@@ -133,7 +135,12 @@ export default function UserListTable() {
             {rows
               .slice(val * rowsPerpage, val * rowsPerpage + rowsPerpage)
               .map((row) => (
-                <StyledTableRow key={row.name}>
+                <StyledTableRow
+                  key={row.name}
+                  onClick={() => {
+                    history.push("/user-indivisual");
+                  }}
+                >
                   <StyledTableCell component="th" scope="row">
                     {row.name}
                   </StyledTableCell>

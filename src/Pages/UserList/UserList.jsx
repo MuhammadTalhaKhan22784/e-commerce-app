@@ -2,7 +2,7 @@ import React from "react";
 import "./UserList.css";
 import SideBar from "../../Components/SideBar";
 import UserListTable from "../../Components/Table/UserListTable";
-import { fade, makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";
 import BackUserBtn from "../../Components/Button/BackUserBtn";
@@ -58,7 +58,7 @@ const UserList = () => {
 
   return (
     <React.Fragment>
-      <SideBar />
+      <SideBar admin/>
       <div className="userlist_section">
         <div className="ul_header">
           <div className={classes.search}>
@@ -74,7 +74,7 @@ const UserList = () => {
               inputProps={{ "aria-label": "search" }}
             />
           </div>
-          <BackUserBtn btnName="Add New User" btnImg={addIcon} />
+          <BackUserBtn btnName="Add New User" btnImg={addIcon} btnLink="#" />
         </div>
         <div className="ul_table">
           <UserListTable />

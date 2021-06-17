@@ -70,4 +70,44 @@
   .userlist_section {
     padding-left: 0;
   }
+  .ul_table {
+    margin: 3rem auto 0 auto;
+  }
+  .ul_header {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ul_table {
+    margin: 0 auto;
+  }
+  .ul_header {
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    line-height: 6;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .ul_header {
+    width: 92%;
+  }
+  .ul_header .makeStyles-inputInput-3 {
+    width: 207px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .ul_pagination {
+    width: 98%;
+    line-height: 3;
+  }
+}
+
+@media screen and (max-width: 353px) {
+  .ul_pagination .MuiPagination-ul {
+    width: 224px;
+  }
 }

@@ -16,20 +16,20 @@ const Quote = () => {
               <strong>$55,526.03</strong>
             </Box>
             <Box>
-              <span>Total List Price</span>
-              <strong>$55,526.03</strong>
+              <span>Average Discount</span>
+              <strong>7%</strong>
             </Box>
             <Box>
-              <span>Total List Price</span>
-              <strong>$55,526.03</strong>
+              <span>Average Margin %</span>
+              <strong>7%</strong>
             </Box>
             <Box>
-              <span>Total List Price</span>
-              <strong>$55,526.03</strong>
+              <span>Total Dealer Net</span>
+              <strong>$15,526.03</strong>
             </Box>
             <Box>
-              <span>Total List Price</span>
-              <strong>$55,526.03</strong>
+              <span>Total Dealer Sell</span>
+              <strong>$35,526.03</strong>
             </Box>
           </Box>
           <ExportBtn />

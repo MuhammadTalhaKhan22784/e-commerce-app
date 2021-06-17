@@ -468,7 +468,7 @@ function EnhancedTableHead(props) {
   };
 
   return (
-    <TableHead>
+    <TableHead style={{ background: "#F5F5F5" }}>
       <TableRow>
         <TableCell padding="checkbox">
           <Checkbox
