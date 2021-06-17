@@ -2,13 +2,15 @@ import React from "react";
 import SideBar from "../../Components/SideBar";
 import BackUserBtn from "../../Components/Button/BackUserBtn";
 import "./UserIndivisual.css";
+// assets
+import back_icon from "../../Assets/back_icon.png";
 
 const UserIndivisual = () => {
   return (
     <React.Fragment>
       <SideBar />
       <div className="user_indivisual_section">
-        <BackUserBtn />
+        <BackUserBtn btnName="Back to Users" btnImg={back_icon} />
         <div className="uif_box">
           <h2>User Information</h2>
           <div className="user_info_form">

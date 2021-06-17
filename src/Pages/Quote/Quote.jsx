@@ -2,6 +2,7 @@ import { Box } from "@material-ui/core";
 import React from "react";
 import SideBar from "../../Components/SideBar";
 import DataTable from "../../Components/Table/QuoteTable";
+import ExportBtn from "../../Components/Button/ExportBtn";
 import "./Quote.css";
 const Quote = () => {
   return (
@@ -9,10 +10,29 @@ const Quote = () => {
       <SideBar />
       <Box className="quote_section">
         <Box className="qu_box">
-          <Box>
-            <span>Total List Price</span>
-            <strong>$55,526.03</strong>
+          <Box className="qu_b1">
+            <Box>
+              <span>Total List Price</span>
+              <strong>$55,526.03</strong>
+            </Box>
+            <Box>
+              <span>Total List Price</span>
+              <strong>$55,526.03</strong>
+            </Box>
+            <Box>
+              <span>Total List Price</span>
+              <strong>$55,526.03</strong>
+            </Box>
+            <Box>
+              <span>Total List Price</span>
+              <strong>$55,526.03</strong>
+            </Box>
+            <Box>
+              <span>Total List Price</span>
+              <strong>$55,526.03</strong>
+            </Box>
           </Box>
+          <ExportBtn />
         </Box>
         <Box className="qu_table">
           <DataTable />

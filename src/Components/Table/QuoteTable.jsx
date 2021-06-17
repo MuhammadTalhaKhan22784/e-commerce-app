@@ -25,6 +25,9 @@ import { Box } from "@material-ui/core";
 import itemS from "../../Assets/item1s.png";
 import add from "../../Assets/Group 16559.svg";
 import minus from "../../Assets/Group 16560.svg";
+import deleteIcon from "../../Assets/delete-icon.png";
+import settingIcon from "../../Assets/settings icon1.png";
+import SettingDropdown from "../DropDown/SettingDropdown";
 
 function createData(
   Image,
@@ -540,7 +543,6 @@ const EnhancedTableToolbar = (props) => {
   // console.log(props , 'custom')
 
   return (
-  
     <Toolbar
       className={clsx(classes.root, {
         [classes.highlight]: numSelected > 0,
@@ -555,14 +557,15 @@ const EnhancedTableToolbar = (props) => {
         >
           {numSelected} selected
         </Typography>
-
-        <Tooltip title="Delete">
+        <Box className="c_line"></Box>
+        <Tooltip title="Delete" className="delete_icon_b">
           <IconButton aria-label="delete">
-            <DeleteIcon />
+            <img src={deleteIcon} alt="..." />
+            <span>Delete</span>
           </IconButton>
         </Tooltip>
       </Box>
-      <Box>
+      <Box className="pagination_b">
         <TablePagination
           rowsPerPageOptions={[5, 10]}
           // rowsPerPageOptions={false}
@@ -574,9 +577,11 @@ const EnhancedTableToolbar = (props) => {
           onChangePage={props.handleChangePage}
           onChangeRowsPerPage={props.handleChangeRowsPerPage}
         />
+        <Box display="flex">
+          <SettingDropdown />
+        </Box>
       </Box>
     </Toolbar>
-  
   );
 };
 
@@ -611,7 +616,7 @@ const useStyles = makeStyles((theme) => ({
 export default function DataTable() {
   const classes = useStyles();
   const [order, setOrder] = React.useState("asc");
-  const [orderBy, setOrderBy] = React.useState("Quantity");
+  const [orderBy, setOrderBy] = React.useState("Name");
   const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
@@ -646,13 +651,12 @@ export default function DataTable() {
     } else if (selectedIndex > 0) {
       newSelected = newSelected.concat(
         selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1),
+        selected.slice(selectedIndex + 1)
       );
     }
 
     setSelected(newSelected);
   };
-
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -668,7 +672,6 @@ export default function DataTable() {
   //   };
 
   const isSelected = (name) => selected.indexOf(name) !== -1;
-  
 
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
@@ -700,7 +703,7 @@ export default function DataTable() {
               rowCount={rows.length}
             />
             <TableBody>
-            {stableSort(rows, getComparator(order, orderBy))
+              {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
                   const isItemSelected = isSelected(row.Image);
@@ -714,7 +717,7 @@ export default function DataTable() {
                       tabIndex={-1}
                       key={row.Image}
                       selected={isItemSelected}
-                      >
+                    >
                       <TableCell padding="checkbox">
                         <Checkbox
                           onClick={(event) => handleClick(event, row.Image)}
@@ -722,12 +725,12 @@ export default function DataTable() {
                           inputProps={{ "aria-labelledby": labelId }}
                         />
                       </TableCell>
-                      
+
                       <TableCell
-                      component="th"
-                      id={labelId}
-                      scope="row"
-                      padding="none"
+                        component="th"
+                        id={labelId}
+                        scope="row"
+                        padding="none"
                       >
                         {row.Image}
                       </TableCell>

@@ -6,6 +6,8 @@ import { fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";
 import BackUserBtn from "../../Components/Button/BackUserBtn";
+// assets
+import addIcon from "../../Assets/add_icon.png";
 
 const useStyles = makeStyles((theme) => ({
   search: {
@@ -21,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("sm")]: {
       width: "auto",
     },
-    borderRadius:"8px !important",
+    borderRadius: "8px !important",
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
@@ -39,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     width: "300px",
     "&::placeholder": {
       color: "#3A485A !important",
-      opacity:"1"
+      opacity: "1",
     },
   },
 
@@ -72,7 +74,7 @@ const UserList = () => {
               inputProps={{ "aria-label": "search" }}
             />
           </div>
-          <BackUserBtn />
+          <BackUserBtn btnName="Add New User" btnImg={addIcon} />
         </div>
         <div className="ul_table">
           <UserListTable />
