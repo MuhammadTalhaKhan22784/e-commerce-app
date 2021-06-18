@@ -147,7 +147,7 @@
 .qu_table .MuiTableCell-root {
   border-bottom: none !important;
 }
-
+/* 
 @media screen and (max-width: 1068px) {
   .qu_box {
     flex-direction: column;
@@ -200,4 +200,4 @@
     width: 84%;
     overflow: inherit !important;
   }
-}
+} */

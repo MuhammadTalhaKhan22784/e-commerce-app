@@ -521,7 +521,6 @@ const useToolbarStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    flexDirection: "column",
   },
   highlight:
     theme.palette.type === "light"
