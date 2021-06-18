@@ -4,6 +4,7 @@ import SideBar from "../../Components/SideBar";
 import DataTable from "../../Components/Table/QuoteTable";
 import ExportBtn from "../../Components/Button/ExportBtn";
 import "./Quote.css";
+import CustomizedDialogs from "../../Components/Modal/ExportModal";
 const Quote = () => {
   return (
     <React.Fragment>
@@ -32,7 +33,7 @@ const Quote = () => {
               <strong>$35,526.03</strong>
             </Box>
           </Box>
-          <ExportBtn />
+          <CustomizedDialogs />
         </Box>
         <Box className="qu_table">
           <DataTable />

@@ -1,4 +1,5 @@
 import React from "react";
+import "../Style/Modal.css";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -8,15 +9,16 @@ import MuiDialogActions from "@material-ui/core/DialogActions";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
-import "../Style/Modal.css";
 import ReportBtn from "../Button/ReportBtn";
+// assets
+import share_icon from "../../Assets/share 1.png";
 const styles = (theme) => ({
   root: {
     margin: 0,
     padding: "10px 18px 0 18px",
     display: "flex",
     alignItems: "center",
-    justifyContent:"space-between !important",
+    justifyContent: "space-between !important",
     color: "#302C2C",
   },
   closeButton: {
@@ -53,7 +55,7 @@ const DialogActions = withStyles((theme) => ({
   root: {
     margin: 0,
     padding: "0px 18px 18px 18px !important",
-    justifyContent:"flex-start !important",
+    justifyContent: "flex-start !important",
   },
 }))(MuiDialogActions);
 
@@ -71,32 +73,25 @@ export default function CustomizedDialogs() {
     <div>
       <Button
         variant="contained"
-        className="report_button"
+        className="export_button"
         onClick={handleClickOpen}
+        endIcon={<img src={share_icon} alt="..." />}
       >
-        Report an issue
-      </Button>{" "}
+        Export
+      </Button>
       <Dialog
-      // onBackdropClick="false"
+        // onBackdropClick="false"
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
         className="report_modal"
       >
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-          Report An Issue
+          Where do you want to export?
         </DialogTitle>
         <DialogContent className="report_modal_content">
-          <form action="#" className="report_form">
-            <div>
-              <label htmlFor="username">User Name</label>
-              <input type="text" id="username" />
-            </div>
-            <div>
-              <label htmlFor="message">Message</label>
-              <textarea id="message" rows="4" cols="50"></textarea>
-            </div>
-          </form>
+        <span>All Columns selected will export</span>
+
         </DialogContent>
         <DialogActions>
           <ReportBtn btnName="Submit" />

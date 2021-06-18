@@ -629,7 +629,7 @@ export default function DataTable() {
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelecteds = rows.map((n) => n.name);
+      const newSelecteds = rows.map((n) => n.Image);
       setSelected(newSelecteds);
 
       return;
