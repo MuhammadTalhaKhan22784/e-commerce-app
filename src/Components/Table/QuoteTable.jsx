@@ -16,6 +16,7 @@ import Paper from "@material-ui/core/Paper";
 import Checkbox from "@material-ui/core/Checkbox";
 import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
+
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -521,7 +522,24 @@ const useToolbarStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    // flexDirection: "column",
+    // [theme.breakpoints.down("xl")]: {
+    //   flexDirection: "row",
+    // },
+    // [theme.breakpoints.down("lg")]: {
+    //   flexDirection: "row",
+    // },
+    // [theme.breakpoints.down("md")]: {
+    //   flexDirection: "row",
+    // },
+    // [theme.breakpoints.down("sm")]: {
+    //   flexDirection: "column",
+    // },
+    // [theme.breakpoints.down("xs")]: {
+    //   flexDirection: "column",
+    // },
   },
+
   highlight:
     theme.palette.type === "light"
       ? {
@@ -543,44 +561,46 @@ const EnhancedTableToolbar = (props) => {
   // console.log(props , 'custom')
 
   return (
-    <Toolbar
-      className={clsx(classes.root, {
-        [classes.highlight]: numSelected > 0,
-      })}
-    >
-      <Box display="flex" alignItems="center">
-        <Typography
-          className={classes.title}
-          color="inherit"
-          variant="subtitle1"
-          component="div"
-        >
-          {numSelected} selected
-        </Typography>
-        <Box className="c_line"></Box>
-        <Tooltip title="Delete" className="delete_icon_b">
-          <IconButton aria-label="delete">
-            <img src={deleteIcon} alt="..." />
-            <span>Delete</span>
-          </IconButton>
-        </Tooltip>
-      </Box>
-      <Box className="pagination_b">
-        <TablePagination
-          rowsPerPageOptions={[5, 10]}
-          component="div"
-          count={rows.length}
-          rowsPerPage={props.perPage}
-          page={props.page}
-          labelRowsPerPage={`Total Rows${"(3010)"}`}
-          onChangePage={props.handleChangePage}
-          onChangeRowsPerPage={props.handleChangeRowsPerPage}
-        />
-        <Box display="flex">
-          <SettingDropdown />
+    <Box className="toolbar_quote">
+      <Toolbar
+        className={clsx(classes.root, {
+          [classes.highlight]: numSelected > 0,
+        })}
+      >
+        <Box display="flex" alignItems="center">
+          <Typography
+            className={classes.title}
+            color="inherit"
+            variant="subtitle1"
+            component="div"
+          >
+            {numSelected} selected
+          </Typography>
+          <Box className="c_line"></Box>
+          <Tooltip title="Delete" className="delete_icon_b">
+            <IconButton aria-label="delete">
+              <img src={deleteIcon} alt="..." />
+              <span>Delete</span>
+            </IconButton>
+          </Tooltip>
         </Box>
-      </Box>
-    </Toolbar>
+        <Box className="pagination_b">
+          <TablePagination
+            rowsPerPageOptions={[5, 10]}
+            component="div"
+            count={rows.length}
+            rowsPerPage={props.perPage}
+            page={props.page}
+            labelRowsPerPage={`Total Rows${"(3010)"}`}
+            onChangePage={props.handleChangePage}
+            onChangeRowsPerPage={props.handleChangeRowsPerPage}
+          />
+          <Box display="flex">
+            <SettingDropdown />
+          </Box>
+        </Box>
+      </Toolbar>
+    </Box>
   );
 };
 

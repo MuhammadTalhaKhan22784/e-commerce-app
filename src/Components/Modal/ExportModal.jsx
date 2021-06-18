@@ -9,9 +9,14 @@ import MuiDialogActions from "@material-ui/core/DialogActions";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
+import { Box } from "@material-ui/core";
 import ReportBtn from "../Button/ReportBtn";
 // assets
 import share_icon from "../../Assets/share 1.png";
+import pdfIcon from "../../Assets/pdf 1.png";
+import excelIcon from "../../Assets/excel 1.png";
+import googleSheetIcon from "../../Assets/google-sheets 1.png";
+import iIcon from "../../Assets/iicon.png";
 const styles = (theme) => ({
   root: {
     margin: 0,
@@ -84,18 +89,31 @@ export default function CustomizedDialogs() {
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
-        className="report_modal"
+        className="export_modal"
       >
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
           Where do you want to export?
         </DialogTitle>
         <DialogContent className="report_modal_content">
-        <span>All Columns selected will export</span>
-
+          <Box display="flex" alignItems="center">
+            <img src={iIcon} alt="..." />
+            <span>All Columns selected will export</span>
+          </Box>
+          <Box className="export_items">
+            <Box>
+              <img src={pdfIcon} alt="..." />
+              <span>Adobe PDF</span>
+            </Box>
+            <Box>
+              <img src={excelIcon} alt="..." />
+              <span>Excel</span>
+            </Box>
+            <Box>
+              <img src={googleSheetIcon} alt="..." />
+              <span>Google Sheets</span>
+            </Box>
+          </Box>
         </DialogContent>
-        <DialogActions>
-          <ReportBtn btnName="Submit" />
-        </DialogActions>
       </Dialog>
     </div>
   );
