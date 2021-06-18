@@ -521,6 +521,7 @@ const useToolbarStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    flexDirection: "column",
   },
   highlight:
     theme.palette.type === "light"
@@ -568,7 +569,6 @@ const EnhancedTableToolbar = (props) => {
       <Box className="pagination_b">
         <TablePagination
           rowsPerPageOptions={[5, 10]}
-          // rowsPerPageOptions={false}
           component="div"
           count={rows.length}
           rowsPerPage={props.perPage}

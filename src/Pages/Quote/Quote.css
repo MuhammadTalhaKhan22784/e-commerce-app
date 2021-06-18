@@ -38,6 +38,8 @@
 }
 
 .pagination_b {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   display: flex;
   align-items: center;
@@ -45,6 +47,8 @@
 
 .qu_box {
   width: 98%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
   margin-bottom: 2rem;
   display: flex;
@@ -95,6 +99,7 @@
 
 .qu_item1 img {
   width: 30px;
+  -o-object-fit: contain;
   object-fit: contain;
 }
 
@@ -124,6 +129,8 @@
 }
 
 .qu_table span {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
 }
 
@@ -170,9 +177,12 @@
 }
 
 @media screen and (max-width: 760px) {
-  .qu_table .makeStyles-root-22 {
-    flex-direction: column;
-    padding-top: 15px;
+  .qu_table {
+    width: 94% !important;
+  }
+  .qu_table .MuiToolbar-root {
+    width: 98%;
+    padding-top:15px;
   }
   .qu_table .MuiTablePagination-toolbar {
     justify-content: center;
@@ -181,8 +191,13 @@
   }
   .pagination_b {
     width: 100%;
+    display: flex;
+  }
+  .pagination_b img {
+    margin-top: 13px;
   }
   .pagination_b .MuiTablePagination-root {
     width: 84%;
+    overflow: inherit !important;
   }
 }
