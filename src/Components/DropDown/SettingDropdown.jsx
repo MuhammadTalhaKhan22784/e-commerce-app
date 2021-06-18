@@ -48,10 +48,30 @@ const StyledMenuItem = withStyles((theme) => ({
 
 export default function SettingDropdown() {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [show, setShow] = React.useState(false);
-
+  let [show, setShow] = React.useState({
+    f: false,
+    f1: false,
+    f2: false,
+    f3: false,
+    f4: false,
+    f5: false,
+    f6: false,
+    f7: false,
+    f8: false,
+    f9: false,
+    f10: false,
+    f11: false,
+    f12: false,
+    f13: false,
+    f14: false,
+    f15: false,
+  });
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+  };
+
+  const handleOpen = (e) => {
+    setShow({ ...show, [e]: !show[e] });
   };
 
   const handleClose = () => {
@@ -89,18 +109,18 @@ export default function SettingDropdown() {
             width="100%"
           >
             <Button
-              className={show === false ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(false);
-              }}
+              className={
+                show.f === false ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f")}
             >
               Show
             </Button>
             <Button
-              className={show === true ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(true);
-              }}
+              className={
+                show.f === true ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f")}
             >
               Hide
             </Button>
@@ -120,18 +140,18 @@ export default function SettingDropdown() {
             width="100%"
           >
             <Button
-              className={show === false ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(false);
-              }}
+              className={
+                show.f1 === false ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f1")}
             >
               Show
             </Button>
             <Button
-              className={show === true ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(true);
-              }}
+              className={
+                show.f1 === true ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f1")}
             >
               Hide
             </Button>
@@ -151,18 +171,18 @@ export default function SettingDropdown() {
             width="100%"
           >
             <Button
-              className={show === false ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(false);
-              }}
+              className={
+                show.f2 === false ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f2")}
             >
               Show
             </Button>
             <Button
-              className={show === true ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(true);
-              }}
+              className={
+                show.f2 === true ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f2")}
             >
               Hide
             </Button>
@@ -182,18 +202,18 @@ export default function SettingDropdown() {
             width="100%"
           >
             <Button
-              className={show === false ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(false);
-              }}
+              className={
+                show.f3 === false ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f3")}
             >
               Show
             </Button>
             <Button
-              className={show === true ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(true);
-              }}
+              className={
+                show.f3 === true ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f3")}
             >
               Hide
             </Button>
@@ -213,18 +233,18 @@ export default function SettingDropdown() {
             width="100%"
           >
             <Button
-              className={show === false ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(false);
-              }}
+              className={
+                show.f4 === false ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f4")}
             >
               Show
             </Button>
             <Button
-              className={show === true ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(true);
-              }}
+              className={
+                show.f4 === true ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f4")}
             >
               Hide
             </Button>
@@ -244,18 +264,18 @@ export default function SettingDropdown() {
             width="100%"
           >
             <Button
-              className={show === false ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(false);
-              }}
+              className={
+                show.f5 === false ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f5")}
             >
               Show
             </Button>
             <Button
-              className={show === true ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(true);
-              }}
+              className={
+                show.f5 === true ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f5")}
             >
               Hide
             </Button>
@@ -275,18 +295,18 @@ export default function SettingDropdown() {
             width="100%"
           >
             <Button
-              className={show === false ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(false);
-              }}
+              className={
+                show.f6 === false ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f6")}
             >
               Show
             </Button>
             <Button
-              className={show === true ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(true);
-              }}
+              className={
+                show.f6 === true ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f6")}
             >
               Hide
             </Button>
@@ -306,18 +326,18 @@ export default function SettingDropdown() {
             width="100%"
           >
             <Button
-              className={show === false ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(false);
-              }}
+              className={
+                show.f7 === false ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f7")}
             >
               Show
             </Button>
             <Button
-              className={show === true ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(true);
-              }}
+              className={
+                show.f7 === true ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f7")}
             >
               Hide
             </Button>
@@ -337,18 +357,18 @@ export default function SettingDropdown() {
             width="100%"
           >
             <Button
-              className={show === false ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(false);
-              }}
+              className={
+                show.f8 === false ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f8")}
             >
               Show
             </Button>
             <Button
-              className={show === true ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(true);
-              }}
+              className={
+                show.f8 === true ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f8")}
             >
               Hide
             </Button>
@@ -368,18 +388,18 @@ export default function SettingDropdown() {
             width="100%"
           >
             <Button
-              className={show === false ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(false);
-              }}
+              className={
+                show.f9 === false ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f9")}
             >
               Show
             </Button>
             <Button
-              className={show === true ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(true);
-              }}
+              className={
+                show.f9 === true ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f9")}
             >
               Hide
             </Button>
@@ -399,18 +419,18 @@ export default function SettingDropdown() {
             width="100%"
           >
             <Button
-              className={show === false ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(false);
-              }}
+              className={
+                show.f10 === false ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f10")}
             >
               Show
             </Button>
             <Button
-              className={show === true ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(true);
-              }}
+              className={
+                show.f10 === true ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f10")}
             >
               Hide
             </Button>
@@ -430,18 +450,18 @@ export default function SettingDropdown() {
             width="100%"
           >
             <Button
-              className={show === false ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(false);
-              }}
+              className={
+                show.f11 === false ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f11")}
             >
               Show
             </Button>
             <Button
-              className={show === true ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(true);
-              }}
+              className={
+                show.f11 === true ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f11")}
             >
               Hide
             </Button>
@@ -461,18 +481,18 @@ export default function SettingDropdown() {
             width="100%"
           >
             <Button
-              className={show === false ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(false);
-              }}
+              className={
+                show.f12 === false ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f12")}
             >
               Show
             </Button>
             <Button
-              className={show === true ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(true);
-              }}
+              className={
+                show.f12 === true ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f12")}
             >
               Hide
             </Button>
@@ -492,18 +512,18 @@ export default function SettingDropdown() {
             width="100%"
           >
             <Button
-              className={show === false ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(false);
-              }}
+              className={
+                show.f13 === false ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f13")}
             >
               Show
             </Button>
             <Button
-              className={show === true ? "drp_active_btn1" : "drp_active_btn2"}
-              onClick={() => {
-                setShow(true);
-              }}
+              className={
+                show.f13 === true ? "drp_active_btn1" : "drp_active_btn2"
+              }
+              onClick={() => handleOpen("f13")}
             >
               Hide
             </Button>

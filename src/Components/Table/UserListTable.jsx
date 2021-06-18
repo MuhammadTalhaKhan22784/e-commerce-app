@@ -43,7 +43,7 @@ function createData(name, plan, status) {
 const a = [
   createData(
     <Box
-      width="200px"
+    className="ul_b1"
       display="flex"
       alignItems="center"
       justifyContent="space-between"
@@ -59,7 +59,7 @@ const a = [
   ),
   createData(
     <Box
-      width="200px"
+    className="ul_b1"
       display="flex"
       alignItems="center"
       justifyContent="space-between"
@@ -75,7 +75,7 @@ const a = [
   ),
   createData(
     <Box
-      width="200px"
+    className="ul_b1"
       display="flex"
       alignItems="center"
       justifyContent="space-between"
@@ -91,7 +91,7 @@ const a = [
   ),
   createData(
     <Box
-      width="200px"
+    className="ul_b1"
       display="flex"
       alignItems="center"
       justifyContent="space-between"
