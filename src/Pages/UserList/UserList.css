@@ -9,7 +9,9 @@
   display: flex;
   justify-content: space-between;
 }
-
+.ul_header > .MuiInputBase-root {
+  width: 100%;
+}
 .ul_table {
   width: 97%;
   margin-top: 3rem;
