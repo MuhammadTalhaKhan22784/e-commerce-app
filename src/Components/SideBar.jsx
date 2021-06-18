@@ -130,10 +130,9 @@ export default function SideBar({ admin }) {
           </NavLink>
         </div>
       </List>
-      <div>
+      {/* <div>
         <NavLink
-          // exact
-          // activeClassName="activeLink"
+        
           className="sidebar_mob_link"
           to={admin ? "/tickets" : "/faq"}
         >
@@ -145,9 +144,21 @@ export default function SideBar({ admin }) {
           <img className="img2" src={admin ? adminTicket : faq} alt="..." />
           <p>{admin ? "Support Tickets" : "FAQ"}</p>
         </NavLink>
-      </div>
+      </div> */}
+    
       {!admin ? (
-        <>
+        <>  <div>
+        <NavLink
+          exact
+          activeClassName="activeLink"
+          className="sidebar_mob_link"
+          to="/faq"
+        >
+          <img className="img1" src={faqWhite} alt="..." />
+          <img className="img2" src={faq} alt="..." />
+          <p>FAQ</p>
+        </NavLink>
+      </div>
           <div>
             <NavLink
               exact
@@ -271,9 +282,9 @@ export default function SideBar({ admin }) {
               </div>
               {admin ? (
                 <div>
-                  <NavLink
-                    // exact
-                    // activeClassName="activeLink"
+                  {/* <NavLink
+                    exact
+                    activeClassName="activeLink"
                     className="sidebar_link"
                     to="#"
                   >
@@ -288,7 +299,7 @@ export default function SideBar({ admin }) {
                       alt="..."
                     />
                     <p>Support Tickets </p>
-                  </NavLink>
+                  </NavLink> */}
                 </div>
               ) : null}
             </List>
