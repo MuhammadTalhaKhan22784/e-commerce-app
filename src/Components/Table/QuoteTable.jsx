@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { lighten, makeStyles } from "@material-ui/core/styles";
@@ -34,6 +34,7 @@ function createData(
   Image,
   Quantity,
   Name,
+  Number,
   Description,
   Manufacture,
   Size,
@@ -43,12 +44,14 @@ function createData(
   Discount,
   DealerNet,
   Margin,
-  DealerSell
+  DealerSell,
+  id
 ) {
   return {
     Image,
     Quantity,
     Name,
+    Number,
     Description,
     Manufacture,
     Size,
@@ -59,21 +62,15 @@ function createData(
     DealerNet,
     Margin,
     DealerSell,
+    id,
   };
 }
-
 const rows = [
   createData(
     <Box className="qu_item1">
       <img src={itemS} />
     </Box>,
-    <Box className="counter_td">
-      <Box>
-        <img src={minus} alt="..." />
-        <span>1</span>
-        <img src={add} alt="..." />
-      </Box>
-    </Box>,
+    1,
     "Vision",
     "VL2428PBA",
     "Vision Rectangular Base...",
@@ -85,19 +82,21 @@ const rows = [
     "10.0%",
     "$66.00",
     "0.8%",
-    "$72.03"
+    "$72.03",
+    "01"
   ),
   createData(
     <Box className="qu_item1">
       <img src={itemS} />
     </Box>,
-    <Box className="counter_td">
-      <Box>
-        <img src={minus} alt="..." />
-        <span>1</span>
-        <img src={add} alt="..." />
-      </Box>
-    </Box>,
+    // <Box className="counter_td">
+    //   <Box>
+    //     <img src={minus} alt="..." />
+    //     <span>1</span>
+    //     <img src={add} alt="..." />
+    //   </Box>
+    // </Box>,
+    1,
     "Vision",
     "VL2428PBA",
     "Vision Rectangular Base...",
@@ -109,19 +108,21 @@ const rows = [
     "10.0%",
     "$66.00",
     "0.8%",
-    "$72.03"
+    "$72.03",
+    "02"
   ),
   createData(
     <Box className="qu_item1">
       <img src={itemS} />
     </Box>,
-    <Box className="counter_td">
-      <Box>
-        <img src={minus} alt="..." />
-        <span>1</span>
-        <img src={add} alt="..." />
-      </Box>
-    </Box>,
+    // <Box className="counter_td">
+    //   <Box>
+    //     <img src={minus} alt="..." />
+    //     <span>1</span>
+    //     <img src={add} alt="..." />
+    //   </Box>
+    // </Box>,
+    1,
     "Vision",
     "VL2428PBA",
     "Vision Rectangular Base...",
@@ -133,19 +134,21 @@ const rows = [
     "10.0%",
     "$66.00",
     "0.8%",
-    "$72.03"
+    "$72.03",
+    "03"
   ),
   createData(
     <Box className="qu_item1">
       <img src={itemS} />
     </Box>,
-    <Box className="counter_td">
-      <Box>
-        <img src={minus} alt="..." />
-        <span>1</span>
-        <img src={add} alt="..." />
-      </Box>
-    </Box>,
+    // <Box className="counter_td">
+    //   <Box>
+    //     <img src={minus} alt="..." />
+    //     <span>1</span>
+    //     <img src={add} alt="..." />
+    //   </Box>
+    // </Box>,
+    1,
     "Vision",
     "VL2428PBA",
     "Vision Rectangular Base...",
@@ -157,19 +160,21 @@ const rows = [
     "10.0%",
     "$66.00",
     "0.8%",
-    "$72.03"
+    "$72.03",
+    "04"
   ),
   createData(
     <Box className="qu_item1">
       <img src={itemS} />
     </Box>,
-    <Box className="counter_td">
-      <Box>
-        <img src={minus} alt="..." />
-        <span>1</span>
-        <img src={add} alt="..." />
-      </Box>
-    </Box>,
+    // <Box className="counter_td">
+    //   <Box>
+    //     <img src={minus} alt="..." />
+    //     <span>1</span>
+    //     <img src={add} alt="..." />
+    //   </Box>
+    // </Box>,
+    1,
     "Vision",
     "VL2428PBA",
     "Vision Rectangular Base...",
@@ -181,19 +186,21 @@ const rows = [
     "10.0%",
     "$66.00",
     "0.8%",
-    "$72.03"
+    "$72.03",
+    "05"
   ),
   createData(
     <Box className="qu_item1">
       <img src={itemS} />
     </Box>,
-    <Box className="counter_td">
-      <Box>
-        <img src={minus} alt="..." />
-        <span>1</span>
-        <img src={add} alt="..." />
-      </Box>
-    </Box>,
+    // <Box className="counter_td">
+    //   <Box>
+    //     <img src={minus} alt="..." />
+    //     <span>1</span>
+    //     <img src={add} alt="..." />
+    //   </Box>
+    // </Box>,
+    1,
     "Vision",
     "VL2428PBA",
     "Vision Rectangular Base...",
@@ -205,19 +212,21 @@ const rows = [
     "10.0%",
     "$66.00",
     "0.8%",
-    "$72.03"
+    "$72.03",
+    "06"
   ),
   createData(
     <Box className="qu_item1">
       <img src={itemS} />
     </Box>,
-    <Box className="counter_td">
-      <Box>
-        <img src={minus} alt="..." />
-        <span>1</span>
-        <img src={add} alt="..." />
-      </Box>
-    </Box>,
+    // <Box className="counter_td">
+    //   <Box>
+    //     <img src={minus} alt="..." />
+    //     <span>1</span>
+    //     <img src={add} alt="..." />
+    //   </Box>
+    // </Box>,
+    1,
     "Vision",
     "VL2428PBA",
     "Vision Rectangular Base...",
@@ -229,19 +238,21 @@ const rows = [
     "10.0%",
     "$66.00",
     "0.8%",
-    "$72.03"
+    "$72.03",
+    "07"
   ),
   createData(
     <Box className="qu_item1">
       <img src={itemS} />
     </Box>,
-    <Box className="counter_td">
-      <Box>
-        <img src={minus} alt="..." />
-        <span>1</span>
-        <img src={add} alt="..." />
-      </Box>
-    </Box>,
+    // <Box className="counter_td">
+    //   <Box>
+    //     <img src={minus} alt="..." />
+    //     <span>1</span>
+    //     <img src={add} alt="..." />
+    //   </Box>
+    // </Box>,
+    1,
     "Vision",
     "VL2428PBA",
     "Vision Rectangular Base...",
@@ -253,19 +264,21 @@ const rows = [
     "10.0%",
     "$66.00",
     "0.8%",
-    "$72.03"
+    "$72.03",
+    "08"
   ),
   createData(
     <Box className="qu_item1">
       <img src={itemS} />
     </Box>,
-    <Box className="counter_td">
-      <Box>
-        <img src={minus} alt="..." />
-        <span>1</span>
-        <img src={add} alt="..." />
-      </Box>
-    </Box>,
+    // <Box className="counter_td">
+    //   <Box>
+    //     <img src={minus} alt="..." />
+    //     <span>1</span>
+    //     <img src={add} alt="..." />
+    //   </Box>
+    // </Box>,
+    1,
     "Vision",
     "VL2428PBA",
     "Vision Rectangular Base...",
@@ -277,19 +290,21 @@ const rows = [
     "10.0%",
     "$66.00",
     "0.8%",
-    "$72.03"
+    "$72.03",
+    "09"
   ),
   createData(
     <Box className="qu_item1">
       <img src={itemS} />
     </Box>,
-    <Box className="counter_td">
-      <Box>
-        <img src={minus} alt="..." />
-        <span>1</span>
-        <img src={add} alt="..." />
-      </Box>
-    </Box>,
+    // <Box className="counter_td">
+    //   <Box>
+    //     <img src={minus} alt="..." />
+    //     <span>1</span>
+    //     <img src={add} alt="..." />
+    //   </Box>
+    // </Box>,
+    1,
     "Vision",
     "VL2428PBA",
     "Vision Rectangular Base...",
@@ -301,19 +316,21 @@ const rows = [
     "10.0%",
     "$66.00",
     "0.8%",
-    "$72.03"
+    "$72.03",
+    "10"
   ),
   createData(
     <Box className="qu_item1">
       <img src={itemS} />
     </Box>,
-    <Box className="counter_td">
-      <Box>
-        <img src={minus} alt="..." />
-        <span>1</span>
-        <img src={add} alt="..." />
-      </Box>
-    </Box>,
+    // <Box className="counter_td">
+    //   <Box>
+    //     <img src={minus} alt="..." />
+    //     <span>1</span>
+    //     <img src={add} alt="..." />
+    //   </Box>
+    // </Box>,
+    1,
     "Vision",
     "VL2428PBA",
     "Vision Rectangular Base...",
@@ -325,19 +342,21 @@ const rows = [
     "10.0%",
     "$66.00",
     "0.8%",
-    "$72.03"
+    "$72.03",
+    "11"
   ),
   createData(
     <Box className="qu_item1">
       <img src={itemS} />
     </Box>,
-    <Box className="counter_td">
-      <Box>
-        <img src={minus} alt="..." />
-        <span>1</span>
-        <img src={add} alt="..." />
-      </Box>
-    </Box>,
+    // <Box className="counter_td">
+    //   <Box>
+    //     <img src={minus} alt="..." />
+    //     <span>1</span>
+    //     <img src={add} alt="..." />
+    //   </Box>
+    // </Box>,
+    1,
     "Vision",
     "VL2428PBA",
     "Vision Rectangular Base...",
@@ -349,19 +368,21 @@ const rows = [
     "10.0%",
     "$66.00",
     "0.8%",
-    "$72.03"
+    "$72.03",
+    "12"
   ),
   createData(
     <Box className="qu_item1">
       <img src={itemS} />
     </Box>,
-    <Box className="counter_td">
-      <Box>
-        <img src={minus} alt="..." />
-        <span>1</span>
-        <img src={add} alt="..." />
-      </Box>
-    </Box>,
+    // <Box className="counter_td">
+    //   <Box>
+    //     <img src={minus} alt="..." />
+    //     <span>1</span>
+    //     <img src={add} alt="..." />
+    //   </Box>
+    // </Box>,
+    1,
     "Vision",
     "VL2428PBA",
     "Vision Rectangular Base...",
@@ -373,7 +394,8 @@ const rows = [
     "10.0%",
     "$66.00",
     "0.8%",
-    "$72.03"
+    "$72.03",
+    "13"
   ),
 ];
 
@@ -412,6 +434,8 @@ const headCells = [
   },
   { id: "Quantity", numeric: true, disablePadding: false, label: "Quantity" },
   { id: "Name", numeric: true, disablePadding: false, label: "Name" },
+  { id: "Number", numeric: true, disablePadding: false, label: "Number" },
+
   {
     id: "Description",
     numeric: true,
@@ -522,22 +546,6 @@ const useToolbarStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    // flexDirection: "column",
-    // [theme.breakpoints.down("xl")]: {
-    //   flexDirection: "row",
-    // },
-    // [theme.breakpoints.down("lg")]: {
-    //   flexDirection: "row",
-    // },
-    // [theme.breakpoints.down("md")]: {
-    //   flexDirection: "row",
-    // },
-    // [theme.breakpoints.down("sm")]: {
-    //   flexDirection: "column",
-    // },
-    // [theme.breakpoints.down("xs")]: {
-    //   flexDirection: "column",
-    // },
   },
 
   highlight:
@@ -694,6 +702,25 @@ export default function DataTable() {
 
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
+  // set table data in state
+  const [rowData, setRowdata] = useState(rows);
+  // quantitiy function
+  const handleAdd = (e) => {
+    let setFilter = rowData.filter((val) => {
+      if (val.id === e) {
+        val.Quantity++;
+      }
+    });
+    setRowdata([...rowData, setFilter]);
+  };
+  const handleMinus = (e) => {
+    let setFilter = rowData.filter((val) => {
+      if (val.id === e && val.Quantity>0) {
+        val.Quantity--;
+      }
+    });
+    setRowdata([...rowData, setFilter]);
+  };
 
   return (
     <div className={classes.root}>
@@ -722,19 +749,18 @@ export default function DataTable() {
               rowCount={rows.length}
             />
             <TableBody>
-              {stableSort(rows, getComparator(order, orderBy))
+              {stableSort(rowData, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
                   const isItemSelected = isSelected(row.Image);
                   const labelId = `enhanced-table-checkbox-${index}`;
-
                   return (
                     <TableRow
                       hover
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.Image}
+                      key={row.id}
                       selected={isItemSelected}
                     >
                       <TableCell padding="checkbox">
@@ -753,8 +779,21 @@ export default function DataTable() {
                       >
                         {row.Image}
                       </TableCell>
-                      <TableCell>{row.Quantity}</TableCell>
+                      <TableCell>
+                        <Box className="counter_td">
+                          <Box>
+                            <img onClick={()=>handleMinus(row.id)} src={minus} alt="..." />
+                            <span>{row.Quantity}</span>
+                            <img
+                              onClick={() => handleAdd(row.id)}
+                              src={add}
+                              alt="..."
+                            />
+                          </Box>
+                        </Box>
+                      </TableCell>
                       <TableCell>{row.Name}</TableCell>
+                      <TableCell>{row.Number}</TableCell>
                       <TableCell>{row.Description}</TableCell>
                       <TableCell>{row.Manufacture}</TableCell>
                       <TableCell>{row.Size}</TableCell>
